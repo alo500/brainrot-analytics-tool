@@ -6,6 +6,9 @@ import SummaryCards from "@/components/SummaryCards";
 import PatternCards from "@/components/PatternCards";
 import GeneratedPrompts from "@/components/GeneratedPrompts";
 import IngestForm from "@/components/IngestForm";
+import ViralityPredictor from "@/components/ViralityPredictor";
+import DigestPanel from "@/components/DigestPanel";
+import CompetitorAnalysis from "@/components/CompetitorAnalysis";
 import type { AnalyticsSummary, PromptPattern, GeneratedPrompt } from "@/types";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -94,6 +97,15 @@ export default function SignalDashboard() {
           onUpdate={refreshPrompts}
         />
       )}
+
+      {/* Virality Predictor */}
+      <ViralityPredictor />
+
+      {/* Discord Digest */}
+      <DigestPanel />
+
+      {/* Competitor Analysis */}
+      <CompetitorAnalysis />
     </div>
   );
 }
